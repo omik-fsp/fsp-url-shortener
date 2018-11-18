@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+    crossorigin="anonymous">
+  <!-- Bulma 0.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  <!-- Own Madness -->
+  <script src="static/js/magic.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/css/mods.css">
+  <title>URL Shortener</title>
+</head>
+
+<body>
+  <section class="hero is-success is-fullheight is-bold">
+    <div class="hero-head">
+      <!-- HEADER NAV HOLDER -->
+    </div>
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+
+        <i class="fab fa-python fa-5x"></i>
+        <i class="fab fa-html5 fa-5x"></i>
+        <i class="fab fa-css3 fa-5x"></i>
+        <i class="fas fa-database fa-5x"></i>
+
+        <p class="title is-size-2">
+          Url Shortener Microservice
+        </p>
+        <p class="subtitle">
+          pythonize your ops!
+        </p>
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <form action="api/shorturl/new" method="POST">
+              <div class="field has-addons">
+                <div class="control is-expanded">
+                  <input class="input" type="text" name="url" placeholder="https://omik.github.io">
+                </div>
+                <div class="control">
+                  <button class="button is-dark">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container">
+          <ul>
+            <li>
+              I can POST a URL to <code>/api/shorturl/new</code> and I will receive a shortened URL in the JSON
+              response. e.g. : <code>{"original_url":"http://omik.github.io","short_url":499dE5}</code>
+            </li>
+            <li>
+              If I pass an invalid URL that doesn't follow the valid <code>http(s)://www.example.com(/more/routes)</code>
+              format, the JSON response will contain an error like <code>{"error":"Not a valid URL"}</code>.
+            </li>
+            <li>
+              When I visit the shortened URL, it will redirect me to my original link.<br>
+              e.g. <code>/api/shorturl/TQfpV3</code>
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-foot">
+      <div class="content is-mobile has-text-centered">
+        <p>
+          Proudly BackEnded by <a href="https://omik.github.io" target="_blank"><strong>Jesús Muñoz a.k.a. "omiK"</strong></a><br>
+          using Python, Flask, Flas-SQLAlchemy and Bulma CSS. Feel free to use/remix/destroy
+        </p>
+      </div>
+
+    </div>
+  </section>
+</body>
+
+</html>
